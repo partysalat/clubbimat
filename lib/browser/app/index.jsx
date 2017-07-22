@@ -17,7 +17,7 @@ class App extends Component {
   reset() {
     this.setState((currentState) => {
       currentState.cards.forEach((card) => {
-        card.open = false;
+        card.open = false;// eslint-disable-line no-param-reassign
       });
       return currentState;
     });
@@ -38,12 +38,12 @@ class App extends Component {
     const modes = gamble();
     this.setState((currentState) => {
       currentState.cards.forEach((card) => {
-        card.modeText = modes[card.key].text;
+        card.modeText = modes[card.key].text;// eslint-disable-line no-param-reassign
       });
 
       setTimeout(() => {
         this.enableCards();
-      }, 500);
+      }, 1000);
 
       return currentState;
     });
@@ -52,9 +52,9 @@ class App extends Component {
     return (
       <div>
         <h1 className="app-headline">Der Einarmige Flunkimat!</h1>
-        <div className="app-button" onClick={() => this.gambleMode()}>
+        <button className="app-button" onClick={() => this.gambleMode()}>
           Gamble
-        </div>
+        </button>
 
         {this.state.cards.map(config =>
           <div key={config.title} className="app-card">

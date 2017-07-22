@@ -19,7 +19,7 @@ module.exports = {
   devtool: 'source-map',
   plugins: [
     new webpack.optimize.OccurrenceOrderPlugin(),
-    new ExtractTextPlugin('styles-[hash].css'),
+    new ExtractTextPlugin('flunkimat-[hash].css'),
     function () {
       this.plugin('done', (stats) => {
         mkdirp.sync(path.join(__dirname, 'target'));
