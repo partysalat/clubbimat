@@ -1,0 +1,31 @@
+{
+  "modifier":[
+    {"text":"Standard"},
+    {"text":"Reverse"},
+    {"text":"Silent"},
+    {"text":"Double Trouble"},
+    {"text":"Double or Nothing"},
+    {"text":"Görli"},
+    {"text":"Faxe"},
+    {"text":"Heavy Metal"}
+  ],
+  "basis":[
+    {"text":"Standard"},
+    {"text":"Parkplatz"},
+    {"text":"Potsdamer Platz"},
+    {"text":"Catwalk"},
+    {"text":"Herrengedeck"},
+    {"text":"Oldschool"}
+  ],
+  "special":[
+    {"text":"Standard"},
+    {"text":"Bass"},
+    {"text":"Kopfstand"},
+    {"text":"Luft"},
+    {"text":"Tornado"},
+    {"text":"Kosmonaut"},
+    {"text":"Caro"},
+    {"text":"Ruschel"},
+    {"text":"Frisbee"}
+  ]
+}

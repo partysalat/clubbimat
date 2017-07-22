@@ -2,15 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './card.styl';
 
-function Card({ title, onClick }) {
+function Card({ title, isOpen, modeText }) {
   return (
-    <div className="card-container" onClick={onClick}>
-      <div className="card">
+    <div className="card-container">
+      <div className={['card', isOpen ? 'card-flipper' : ''].join(' ')}>
         <div className="card-front">
           {title}
         </div>
         <div className="card-back">
-          Fooo!
+          {modeText}
         </div>
       </div>
     </div>
@@ -18,6 +18,7 @@ function Card({ title, onClick }) {
 }
 Card.propTypes = {
   title: PropTypes.string.isRequired,
-  onClick: PropTypes.func.isRequired,
+  isOpen: PropTypes.bool.isRequired,
+  modeText: PropTypes.bool,
 };
 export default Card;
