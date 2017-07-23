@@ -1,4 +1,5 @@
 # Der Einarmige Flunkimat
+[![CircleCI](https://circleci.com/gh/just-kile/flunkimat/tree/master.svg?style=svg)](https://circleci.com/gh/just-kile/flunkimat/tree/master)
 
 Everybody knows this feeling: You want to play Flunkiball but you can not decide type of game you want to play. 
 
