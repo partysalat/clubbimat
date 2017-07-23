@@ -11,7 +11,7 @@ module.exports = {
     nodeExternals(),
   ],
   resolve: {
-    extensions: ['', '.js', '.jsx'],
+    extensions: ['.js', '.jsx'],
   },
   // devtool: 'source-map',
   plugins: [
@@ -35,7 +35,7 @@ module.exports = {
     rules: [
       {
         test: /\.jsx?$/,
-        loader: 'babel',
+        loader: 'babel-loader',
         exclude: /node_modules/,
       },
       {
