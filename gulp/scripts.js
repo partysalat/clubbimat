@@ -1,6 +1,6 @@
 
 
-let
+const
   gulp = require('gulp'),
   bs = require('browser-sync'),
   webpack = require('webpack'),

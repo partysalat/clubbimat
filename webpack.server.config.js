@@ -1,4 +1,4 @@
-var
+let
   webpack = require('webpack'),
   nodeExternals = require('webpack-node-externals');
 
@@ -8,19 +8,19 @@ module.exports = {
   target: 'node',
   externals: [
     'aws-sdk',
-    nodeExternals()
+    nodeExternals(),
   ],
   resolve: {
-    extensions: ['', '.js', '.jsx']
+    extensions: ['', '.js', '.jsx'],
   },
   // devtool: 'source-map',
   plugins: [
     new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
     new webpack.DefinePlugin({
-      "process.env": {
+      'process.env': {
         // This has effect on the react lib size
-        "NODE_ENV": JSON.stringify("production")
-      }
+        NODE_ENV: JSON.stringify('production'),
+      },
     }),
     new webpack.optimize.DedupePlugin(),
     new webpack.optimize.OccurenceOrderPlugin(),
@@ -29,25 +29,21 @@ module.exports = {
         unused: true,
         dead_code: true,
         warnings: false,
-        drop_debugger: true
-      }
-    })
+        drop_debugger: true,
+      },
+    }),
   ],
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.jsx?$/,
         loader: 'babel',
-        exclude: /node_modules/
-      },
-      {
-        test: /\.json?$/,
-        loader: 'json'
+        exclude: /node_modules/,
       },
       {
         test: /\.styl/,
-        loader: "ignore-loader"
-      }
-    ]
-  }
+        loader: 'ignore-loader',
+      },
+    ],
+  },
 };

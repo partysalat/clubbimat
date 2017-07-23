@@ -14,7 +14,7 @@ module.exports = {
     filename: 'flunkimat-[hash].js',
   },
   resolve: {
-    extensions: ['', '.js', '.jsx'],
+    extensions: ['.js', '.jsx'],
   },
   devtool: 'source-map',
   plugins: [
@@ -30,18 +30,25 @@ module.exports = {
     },
 
   ],
-  stylus: {
-    use: [bootstrap(), jeet()],
-  },
+  // stylus: {
+  //   use: [bootstrap(), jeet()],
+  // },
   module: {
-    loaders: [
-      {
-        test: /\.json/,
-        loader: 'json-loader',
-      },
+    rules: [
       {
         test: /\.styl/,
-        loader: ExtractTextPlugin.extract('style-loader', 'css-loader!stylus-loader'),
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: [
+            'css-loader',
+            {
+              loader: 'stylus-loader',
+              options: {
+                use: [bootstrap(), jeet()],
+              },
+            },
+          ],
+        }),
       },
 
       {
@@ -50,7 +57,7 @@ module.exports = {
       },
       {
         test: /\.jsx?$/,
-        loader: 'babel',
+        loader: 'babel-loader',
         exclude: /node_modules/,
       },
     ],
