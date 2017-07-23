@@ -19,6 +19,6 @@ function Card({ title, isOpen, modeText }) {
 Card.propTypes = {
   title: PropTypes.string.isRequired,
   isOpen: PropTypes.bool.isRequired,
-  modeText: PropTypes.bool,
+  modeText: PropTypes.string,
 };
 export default Card;

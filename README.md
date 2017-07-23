@@ -1,21 +1,22 @@
-# dutrink.st
-[![CircleCI](https://circleci.com/gh/just-kile/dutrinkst/tree/master.svg?style=svg)](https://circleci.com/gh/just-kile/dutrinkst/tree/master)
+# Der Einarmige Flunkimat
 
-Dutrinkst is the famous famous self explanatory game. It is based on serverless and react.
+Everybody knows this feeling: You want to play Flunkiball but you can not decide type of game you want to play. 
+
+Luckily, there is "Der Einarmige Flunkimat"
+
+It is based on serverless and react.
  
 ## Access
-https://rhy7gvx9t1.execute-api.eu-west-1.amazonaws.com/dev/dutrinkst
+https://tklesdafqc.execute-api.eu-west-1.amazonaws.com/dev/flunkimat
 
-or 
-
-go to http://www.dutrink.st
 
 ## Local Development
 Just start 
 ```
 npm run watch
 ```
-and go to http://localhost:3000/dutrinkst. 
+and go to http://localhost:3000/flunkimat
+ 
 This will spawn the serverless offline plugin and starts a browsersync instance.
 Also all your files are watched and the browser reloads itself on changes.
 
@@ -35,8 +36,4 @@ npm run deploy
 and serverless should take care of the rest.
 
 When the javascript is build, it will create a rev-manifest.json, which contains the filename of the fingerprinted assets. This file will be bundled by serverlss/webpack and is directly deployed into the lambda function.
-
-
-
-
 

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './index.styl';
 import Card from './card/card';
-import { gamble } from './gambling/gambleService';
+import gamble from './gambling/gambleService';
 
 class App extends Component {
   constructor(props) {
