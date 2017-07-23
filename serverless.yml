@@ -22,7 +22,7 @@ custom:
 
 functions:
   index:
-    handler: lib/server/handlers/indexHandler.dutrinkst
+    handler: indexHandler.dutrinkst
     events:
       - http:
           method: GET
