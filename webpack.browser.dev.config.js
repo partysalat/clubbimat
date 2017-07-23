@@ -42,6 +42,31 @@ module.exports = {
           use: [
             'css-loader',
             {
+              loader: 'postcss-loader',
+              options: {
+                plugins() {
+                  return [
+                    require('cssnano')({
+                      zindex: false,
+                      autoprefixer: {
+                        browsers: [
+                          '> 2%',
+                          'Android 4',
+                          'last 5 Safari versions',
+                          'last 3 iOS versions',
+                          'last 5 Chrome versions',
+                          'last 5 ChromeAndroid versions',
+                          'last 2 ExplorerMobile versions',
+                          'last 2 FirefoxAndroid versions',
+                        ],
+                        add: true,
+                      },
+                    }),
+                  ];
+                },
+              },
+            },
+            {
               loader: 'stylus-loader',
               options: {
                 use: [bootstrap(), jeet()],
