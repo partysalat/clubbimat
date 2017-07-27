@@ -8,7 +8,7 @@ module.exports = {
   target: 'node',
   externals: [
     'aws-sdk',
-    './../../../target/rev-manifest.json',
+    // './../../../target/rev-manifest.json',
     nodeExternals(),
   ],
   resolve: {
