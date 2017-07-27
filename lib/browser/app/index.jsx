@@ -39,6 +39,7 @@ class App extends Component {
     this.setState((currentState) => {
       currentState.cards.forEach((card) => {
         card.modeText = modes[card.key].text;// eslint-disable-line no-param-reassign
+        card.description = modes[card.key].description;// eslint-disable-line no-param-reassign
       });
 
       setTimeout(() => {
@@ -47,6 +48,9 @@ class App extends Component {
 
       return currentState;
     });
+  }
+  showExplanation(title, msg) {
+    window.alert(`${title}: ${msg}`);
   }
   render() {
     return (
@@ -62,6 +66,7 @@ class App extends Component {
               title={config.title}
               isOpen={config.open}
               modeText={config.modeText}
+              onClick={() => this.showExplanation(config.modeText,config.description)}
             />
           </div>
         )}

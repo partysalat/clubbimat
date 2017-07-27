@@ -1,4 +1,4 @@
-let
+const
   webpack = require('webpack'),
   nodeExternals = require('webpack-node-externals');
 
@@ -8,6 +8,7 @@ module.exports = {
   target: 'node',
   externals: [
     'aws-sdk',
+    './../../../target/rev-manifest.json',
     nodeExternals(),
   ],
   resolve: {
