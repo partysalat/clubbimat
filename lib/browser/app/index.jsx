@@ -49,8 +49,8 @@ class App extends Component {
       return currentState;
     });
   }
-  showExplanation(title, msg) {
-    window.alert(`${title}: ${msg}`);
+  showExplanation(title, msg) { // eslint-disable-line class-methods-use-this
+    window.alert(`${title}: ${msg}`);// eslint-disable-line no-alert,no-undef,class-methods-use-this
   }
   render() {
     return (
@@ -66,7 +66,7 @@ class App extends Component {
               title={config.title}
               isOpen={config.open}
               modeText={config.modeText}
-              onClick={() => this.showExplanation(config.modeText,config.description)}
+              onClick={() => this.showExplanation(config.modeText, config.description)}
             />
           </div>
         )}
