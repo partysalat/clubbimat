@@ -1,0 +1,13 @@
+region: eu-west-1
+
+stacks:
+  flunkimat-dns-stack:
+    template-url: templates/dns.yaml
+    timeout: 1200
+    parameters:
+      apiGatewayEndpoint: '|Ref|flunkimat-dev.ServiceEndpoint'
+      dnsPrefix: 'flunkimat'
+      dnsBaseName: 'cornetto.cloud'
+      restApiId: '|Ref|flunkimat-dev.ApiGatewayRestApiId'
+      # cannot reference because of other region (needs to be us-east-1)
+      certificateArn: 'arn:aws:acm:us-east-1:111580521549:certificate/42516bce-8ee6-4c3a-a9bc-4c34641c0815'
