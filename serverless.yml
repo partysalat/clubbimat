@@ -23,7 +23,7 @@ custom:
 
 functions:
   index:
-    handler: indexHandler.dutrinkst
+    handler: indexHandler.flunkimat
     events:
       - http:
           method: GET
