@@ -9,7 +9,7 @@ It is based on serverless and react.
  
 ## Access
 https://tklesdafqc.execute-api.eu-west-1.amazonaws.com/dev/flunkimat
-
+https://flunkimat.cornetto.cloud
 
 ## Local Development
 Just start 
@@ -40,6 +40,19 @@ and serverless should take care of the rest.
 When the javascript is build, it will create a rev-manifest.json, which contains the filename of the fingerprinted assets. This file will be bundled by serverlss/webpack and is directly deployed into the lambda function.
 
 ### Route 53 
-The is an extra cloudformation template, that will take care of the DNS setup. I used cfn-sphere ()
- 
+The is an extra cloudformation template, that will take care of the DNS setup. I used cfn-sphere (https://github.com/cfn-sphere/cfn-sphere) which makes 
+your life a little bit easier working with Cloudformation stacks. 
+
+As a precondition you have to have a hosted zone in AWS. When you have that, apply your changes to cfn/certificate-stack.yaml and execute 
+
+
+```
+cf sync certicate-stack.yaml
+```
+and click on the link you get as a domain owner. (see http://docs.aws.amazon.com/de_de/apigateway/latest/developerguide/how-to-custom-domains.html)
+
+After that, do your changes in dns-stack.yaml and execute 
+```
+cf sync dns-stack.yaml
+```
 
