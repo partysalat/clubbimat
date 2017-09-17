@@ -1,8 +1,10 @@
 const
   webpack = require('webpack'),
+  // slsw = require('serverless-webpack'),
   nodeExternals = require('webpack-node-externals');
 
 module.exports = {
+  // entry: slsw.lib.entries,
   entry: './lib/server/handlers/indexHandler.js',
   // output: provided by serverless
   target: 'node',

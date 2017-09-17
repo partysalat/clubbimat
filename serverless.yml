@@ -23,7 +23,7 @@ custom:
 
 functions:
   index:
-    handler: indexHandler.flunkimat
+    handler: lib/server/handlers/indexHandler.flunkimat
     events:
       - http:
           method: GET
@@ -31,13 +31,10 @@ functions:
           integration: lambda
           request: ${file(./serverless.templates.yml):request-html}
           response: ${file(./serverless.templates.yml):response-html}
+
 resources:
    Outputs:
       ApiGatewayRestApiId:
         Description: The Id of the restapi
-#        Value:
-#          'Fn::GetAtt': [ ApiGatewayRestApi, RootResourceId ]
         Value:
           'Ref': ApiGatewayRestApi
-#        Export:
-#          Name: '${self:service}:${self:custom.stage}:ApiGatewayRestApiId'
