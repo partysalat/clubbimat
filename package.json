@@ -1,8 +1,12 @@
 {
-  "name": "dutrinkst",
+  "name": "flunkimat",
   "version": "1.0.0",
-  "description": "justKile and Astrobra presents: DuTrinkst",
+  "description": "justKile and Gisela presents: Der Einarmige Flunkimat",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/just-kile/flunkimat"
+  },
   "scripts": {
     "clean": "rm -rf target",
     "test": "npm run unit",
