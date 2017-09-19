@@ -3,7 +3,6 @@ const path = require('path');
 const bs = require('browser-sync');
 
 gulp.task('_watch', ['_start:bs', '_scripts:watch'], () => {
-  gulp.watch(path.resolve(`${__dirname}/../handler.js`), ['_reload']);
   gulp.watch(path.resolve(`${__dirname}/../lib/server/**/*`), ['_reload']);
 });
 
@@ -17,4 +16,8 @@ gulp.task('_start:bs', () => {
     proxy: 'http://localhost:2999',
     open: false,
   });
+});
+
+gulp.task('wait', (done) => {
+  setTimeout(done, 2000);
 });
