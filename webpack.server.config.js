@@ -4,9 +4,14 @@ const
   nodeExternals = require('webpack-node-externals');
 
 module.exports = {
-  // entry: slsw.lib.entries,
-  entry: './lib/server/handlers/indexHandler.js',
-  // output: provided by serverless
+  entry: {
+    indexHandler: './lib/server/handlers/indexHandler.js',
+  },
+  output: {
+    libraryTarget: 'commonjs',
+    path: `${__dirname}/.webpack`,
+    filename: './lib/server/handlers/[name].js',
+  },
   target: 'node',
   externals: [
     'aws-sdk',
