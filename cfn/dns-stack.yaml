@@ -10,4 +10,4 @@ stacks:
       dnsBaseName: 'cornetto.cloud'
       restApiId: '|Ref|flunkimat-dev.ApiGatewayRestApiId'
       # cannot reference because of other region (needs to be us-east-1)
-      certificateArn: 'arn:aws:acm:us-east-1:111580521549:certificate/42516bce-8ee6-4c3a-a9bc-4c34641c0815'
+      certificateArn: 'arn:aws:acm:us-east-1:111580521549:certificate/6947e69b-7ee7-4a17-9802-644e6506ed6b'

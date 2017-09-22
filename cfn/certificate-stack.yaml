@@ -1,7 +1,7 @@
 region: us-east-1
 
 stacks:
-  certificate-stack:
+  flunkimat-certificate-stack:
     template-url: templates/certificate.yaml
     timeout: 1200
     parameters:

@@ -51,7 +51,8 @@ cf sync certicate-stack.yaml
 ```
 and click on the link you get as a domain owner. (see http://docs.aws.amazon.com/de_de/apigateway/latest/developerguide/how-to-custom-domains.html)
 
-After that, do your changes in dns-stack.yaml and execute 
+After that, copy the arn of the certificate and paste it in dns-stack.yaml in certificateArn. 
+Do your changes in dns-stack.yaml and execute 
 ```
 cf sync dns-stack.yaml
 ```
