@@ -15,9 +15,7 @@ gulp.task('_scripts:watch', () => {
   const webpackConfig = _.assign({}, webpackDevConfig, {
     watch: true,
   });
-  compile(webpackConfig, () => {
-    setTimeout(bs.reload, 500);
-  });
+  compile(webpackConfig, bs.reload);
 });
 
 gulp.task('_scripts:dev', () => compile(webpackDevConfig));

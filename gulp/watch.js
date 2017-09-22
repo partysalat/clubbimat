@@ -17,7 +17,3 @@ gulp.task('_start:bs', () => {
     open: false,
   });
 });
-
-gulp.task('wait', (done) => {
-  setTimeout(done, 2000);
-});
