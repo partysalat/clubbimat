@@ -1,0 +1,11 @@
+region: eu-west-1
+
+stacks:
+  flunkimat-assets:
+    template-url: templates/assets.yaml
+    timeout: 1200
+    parameters:
+      bucketName: 'flunkimat-assets'
+      originId: 's3-flunkimat-assets'
+      originPath: '/assets'
+

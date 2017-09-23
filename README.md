@@ -9,6 +9,9 @@ It is based on serverless and react.
  
 ## Access
 https://tklesdafqc.execute-api.eu-west-1.amazonaws.com/dev/flunkimat
+
+or 
+
 https://flunkimat.cornetto.cloud
 
 ## Local Development
