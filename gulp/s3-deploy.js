@@ -1,13 +1,17 @@
-let
+const
   gulp = require('gulp'),
   awspublish = require('gulp-awspublish'),
+  yaml = require('js-yaml'),
   rename = require('gulp-rename');
+const fs = require('fs');
+
+const cfnConfig = yaml.safeLoad(fs.readFileSync(`${__dirname}/../cfn/assets-stack.yaml`, 'utf8'));
 
 gulp.task('_aws:deploy', () => {
   const publisher = awspublish.create({
-    region: 'eu-west-1',
+    region: cfnConfig.region,
     params: {
-      Bucket: 'dutrinkst',
+      Bucket: cfnConfig.stacks['flunkimat-assets'].parameters.bucketName,
       ACL: 'public-read',
     },
   }, {
@@ -19,7 +23,7 @@ gulp.task('_aws:deploy', () => {
 
   return gulp.src('./target/assets/**/*')
     .pipe(rename((path) => {
-      path.dirname += '/assets';
+      path.dirname += cfnConfig.stacks['flunkimat-assets'].parameters.originPath;
     }))
     .pipe(publisher.publish(headers))
     .pipe(awspublish.reporter());
