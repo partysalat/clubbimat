@@ -3,15 +3,23 @@ let
   nodeExternals = require('webpack-node-externals');
 
 module.exports = {
-  entry: './lib/server/handlers/indexHandler.js',
+  entry: {
+    indexHandler: './lib/server/handlers/indexHandler.js',
+  },
+  output: {
+    libraryTarget: 'commonjs',
+    path: `${__dirname}/.webpack`,
+    filename: './lib/server/handlers/[name].js',
+  },
   // output: provided by serverless
   target: 'node',
   externals: [
     'aws-sdk',
+    // './../../../target/rev-manifest.json',
     nodeExternals(),
   ],
   resolve: {
-    extensions: ['', '.js', '.jsx'],
+    extensions: ['.js', '.jsx'],
   },
   // devtool: 'source-map',
   plugins: [
@@ -22,8 +30,6 @@ module.exports = {
         NODE_ENV: JSON.stringify('production'),
       },
     }),
-    new webpack.optimize.DedupePlugin(),
-    new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.optimize.UglifyJsPlugin({
       compress: {
         unused: true,
@@ -34,15 +40,11 @@ module.exports = {
     }),
   ],
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.jsx?$/,
-        loader: 'babel',
+        loader: 'babel-loader',
         exclude: /node_modules/,
-      },
-      {
-        test: /\.json?$/,
-        loader: 'json',
       },
       {
         test: /\.styl/,
