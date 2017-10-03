@@ -7,6 +7,7 @@
     {"text":"Double or Nothing", "description": "Jedes Team legt selbst fest: eine Flasche Luft gemeinsam trinken oder jeder ein 0,33er Mädchenbier"},
     {"text":"Görli","description": "jedes Team raucht nebenbei"},
     {"text":"Faxe", "description": "Es wird mit 1,0l Faxe schwach gespielt"},
+    {"text":"Coop Faxe", "description": "Der der nichts wirft, trinkst. Gerade Anzahl an Spieler benötigt."},
     {"text":"Heavy Metal", "description": "Es wird mit Dosenbier gespielt, soweit möglich Marke “5,0”"}
   ],
   "basis":[
