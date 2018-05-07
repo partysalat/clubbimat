@@ -9,7 +9,7 @@ Parameters:
     Type: String
 
   dnsPrefix:
-    Description: DNS Domain prefix, e.g. 'flunkimat'
+    Description: DNS Domain prefix, e.g. 'clubbimat'
     Type: String
 
   dnsBaseName:

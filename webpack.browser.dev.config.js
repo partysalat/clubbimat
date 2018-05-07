@@ -11,14 +11,14 @@ module.exports = {
     app: './lib/browser/main.jsx',
   },
   output: {
-    filename: 'flunkimat-[hash].js',
+    filename: 'clubbimat-[hash].js',
   },
   resolve: {
     extensions: ['.js', '.jsx'],
   },
   devtool: 'source-map',
   plugins: [
-    new ExtractTextPlugin('flunkimat-[hash].css'),
+    new ExtractTextPlugin('clubbimat-[hash].css'),
     function () {
       this.plugin('done', (stats) => {
         mkdirp.sync(path.join(__dirname, 'target'));

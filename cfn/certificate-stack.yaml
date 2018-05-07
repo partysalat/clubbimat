@@ -1,9 +1,9 @@
 region: us-east-1
 
 stacks:
-  flunkimat-certificate-stack:
+  clubbimat-certificate-stack:
     template-url: templates/certificate.yaml
     timeout: 1200
     parameters:
-      dnsPrefix: 'flunkimat'
+      dnsPrefix: 'clubbimat'
       dnsBaseName: 'cornetto.cloud'
