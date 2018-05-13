@@ -1,0 +1,5 @@
+local:
+  ASSETS_DOMAIN_NAME:  http://localhost:9211
+
+pro:
+  ASSETS_DOMAIN_NAME:  http://localhost:9211

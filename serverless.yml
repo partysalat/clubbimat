@@ -5,9 +5,10 @@ provider:
   name: aws
   runtime: nodejs6.10
 
-  stage: dev
-  region: eu-west-1
+  stage: local
+  region: eu-central-1
   profile: default
+  environment: ${file(./config/config.yml):${opt:stage, self:provider.stage}}
 
 plugins:
   - serverless-webpack
@@ -23,14 +24,12 @@ custom:
 
 functions:
   index:
-    handler: lib/server/handlers/indexHandler.flunkimat
+    handler: lib/server/handlers/indexHandler.getClubs
     events:
       - http:
           method: GET
-          path: /
+          path: /clubs
           integration: lambda
-          request: ${file(./serverless.templates.yml):request-html}
-          response: ${file(./serverless.templates.yml):response-html}
 
 resources:
    Outputs:

@@ -1,4 +1,4 @@
-region: eu-west-1
+region: eu-central-1
 
 stacks:
   clubbimat-assets:
@@ -8,4 +8,24 @@ stacks:
       bucketName: 'clubbimat-assets'
       originId: 's3-clubbimat-assets'
       originPath: '/assets'
+
+  clubbimat-page:
+    template-url: templates/page.yaml
+    timeout: 1200
+    parameters:
+      bucketName: 'clubbimat.cornetto.cloud'
+      domainName: 'clubbimat.cornetto.cloud'
+      certificateArn: 'arn:aws:acm:us-east-1:111580521549:certificate/e1ce0039-5e1d-4b99-b96a-eacc3985de95'
+      apiGatewayRestApiId: '|Ref|clubbimat-pro.ApiGatewayRestApiId'
+
+  clubbimat-dns-stack:
+      template-url: templates/dns.yaml
+      timeout: 1200
+      parameters:
+        dnsPrefix: 'clubbimat'
+        dnsBaseName: 'cornetto.cloud'
+        distributionName: '|Ref|clubbimat-page.DistributionName'
+        domainName:
+
+
 
